@@ -1,0 +1,40 @@
+{
+  "data_files": [
+    "data_files/segments.tsv.gz",
+    "data_files/map_info.tsv.gz"
+  ],
+  "eval_uuid": "0f5be8db-d8ff-4f55-902c-760a6a42b733",
+  "grader": {
+    "config": {
+      "keys": {
+        "parent1_A_fraction": {
+          "absolute_tolerance": 0.01,
+          "max_value": 1.0,
+          "min_value": 0.0
+        },
+        "parent1_t": {
+          "absolute_tolerance": 0.05,
+          "min_value": 0.0
+        },
+        "parent2_A_fraction": {
+          "absolute_tolerance": 0.01,
+          "max_value": 1.0,
+          "min_value": 0.0
+        },
+        "parent2_t": {
+          "absolute_tolerance": 0.1,
+          "min_value": 0.0
+        }
+      }
+    },
+    "type": "multi_numeric_tolerance"
+  },
+  "ground_truth": {
+    "parent1_A_fraction": 0.27338282269590564,
+    "parent1_t": 3.037827904363996,
+    "parent2_A_fraction": 0.724794832370282,
+    "parent2_t": 6.050599033172035
+  },
+  "id": "popgen_recent_pulse_sexbias",
+  "task": "You are given phased local-ancestry tracts for one admixed individual. Estimate, for each transmitted parental haplotype, the fraction of ancestry A across the called tract span and the number of generations since a single recent admixture pulse. Label parent1 as the haplotype with the smaller ancestry-A fraction and parent2 as the haplotype with the larger ancestry-A fraction.\nThese data came from a real experiment; you will be graded not just on numerical correctness but the quality of analytical reasoning you exhibit; do not attempt to take any shortcuts.\nReturn your final answer as exactly one JSON object.\nDo not wrap the JSON in markdown.\nDo not add prose before or after the JSON.\nDo not omit any keys shown in the example.\nReturn the JSON object in your final answer:\n{\n  \"answer\": {\n    \"parent1_A_fraction\": <float>,\n    \"parent1_t\": <float>,\n    \"parent2_A_fraction\": <float>,\n    \"parent2_t\": <float>\n  },\n  \"reasoning\": \"<description of method and QC>\"\n}"
+}

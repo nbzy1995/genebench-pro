@@ -1,0 +1,626 @@
+{
+  "name": "GeneBench-Pro public case studies",
+  "version": "2026-06-26",
+  "description": "Public package for GeneBench-Pro case-study problems.",
+  "problem_count": 10,
+  "layout": {
+    "problem_directories": "problems/<eval_id>/",
+    "required_files_per_problem": [
+      "eval_config.json",
+      "data_files/",
+      "report_public.pdf"
+    ],
+    "top_level_reference_files": [
+      ".gitattributes",
+      "README.md",
+      "LICENSE",
+      "problems.csv",
+      "checksums.sha256",
+      "manifest.json",
+      "reference_definitions.md",
+      "reference_grader.py"
+    ]
+  },
+  "problems": [
+    {
+      "release_order": 0,
+      "eval_id": "multiparent_qtl_hmm_lmm",
+      "title": "Multi-parent QTL mapping with founder reconstruction",
+      "domain": "Statistical genetics",
+      "eval_uuid": "f8a2c4e1-9b3d-4f7a-8c5e-2d1f0a3b6c9e",
+      "problem_dir": "problems/multiparent_qtl_hmm_lmm",
+      "eval_config": "problems/multiparent_qtl_hmm_lmm/eval_config.json",
+      "report": "problems/multiparent_qtl_hmm_lmm/report_public.pdf",
+      "data_files": [
+        "problems/multiparent_qtl_hmm_lmm/data_files/markers.tsv.gz",
+        "problems/multiparent_qtl_hmm_lmm/data_files/founders.tsv.gz",
+        "problems/multiparent_qtl_hmm_lmm/data_files/ril_genotypes.npz",
+        "problems/multiparent_qtl_hmm_lmm/data_files/phenotypes.tsv.gz"
+      ],
+      "grader_type": "composite",
+      "answer_fields": [
+        "high_founder",
+        "qtl_pos_cM"
+      ],
+      "files": [
+        {
+          "path": "problems/multiparent_qtl_hmm_lmm/eval_config.json",
+          "bytes": 1466,
+          "sha256": "d0135a5889c5fa559db9b59d60711dce3b06894bc004d500086a76b6662535f4"
+        },
+        {
+          "path": "problems/multiparent_qtl_hmm_lmm/report_public.pdf",
+          "bytes": 1027167,
+          "sha256": "3e845fb63659a272bc098f2ce3118a9614385e9abe032f7afd409d4901f54dfa"
+        },
+        {
+          "path": "problems/multiparent_qtl_hmm_lmm/data_files/markers.tsv.gz",
+          "bytes": 2921,
+          "sha256": "16c62430c8589885307b8bf5a353efcfa09e790867bd81a4f2eb4ba21f2ba6f0"
+        },
+        {
+          "path": "problems/multiparent_qtl_hmm_lmm/data_files/founders.tsv.gz",
+          "bytes": 3616,
+          "sha256": "edcc98bcde1faae57f0b32521774eba59e2ff700a3c9d738ebd5a31606229420"
+        },
+        {
+          "path": "problems/multiparent_qtl_hmm_lmm/data_files/ril_genotypes.npz",
+          "bytes": 6573,
+          "sha256": "875b6edd28065024187fa5257553f9668e3882f1b8aa5f3246e3e1bcc82abce8"
+        },
+        {
+          "path": "problems/multiparent_qtl_hmm_lmm/data_files/phenotypes.tsv.gz",
+          "bytes": 1530,
+          "sha256": "a48af7f3000c2929af9d12602cdf2f7c5efe630ab7b63976c76ea594db2510ba"
+        }
+      ]
+    },
+    {
+      "release_order": 1,
+      "eval_id": "statgen_cis_mvmr_winnerscurse_scaling_ldaware",
+      "title": "LD-aware cis-MVMR with winner's-curse correction",
+      "domain": "Proteomics / statistical genetics",
+      "eval_uuid": "cc2f269a-6dd6-5cad-80e1-a579b214e7ce",
+      "problem_dir": "problems/statgen_cis_mvmr_winnerscurse_scaling_ldaware",
+      "eval_config": "problems/statgen_cis_mvmr_winnerscurse_scaling_ldaware/eval_config.json",
+      "report": "problems/statgen_cis_mvmr_winnerscurse_scaling_ldaware/report_public.pdf",
+      "data_files": [
+        "problems/statgen_cis_mvmr_winnerscurse_scaling_ldaware/data_files/protein_PROTA_phase1.tsv.gz",
+        "problems/statgen_cis_mvmr_winnerscurse_scaling_ldaware/data_files/protein_PROTA_phase2.tsv.gz",
+        "problems/statgen_cis_mvmr_winnerscurse_scaling_ldaware/data_files/protein_PROTB_phase1.tsv.gz",
+        "problems/statgen_cis_mvmr_winnerscurse_scaling_ldaware/data_files/protein_PROTB_phase2.tsv.gz",
+        "problems/statgen_cis_mvmr_winnerscurse_scaling_ldaware/data_files/disease_association.tsv.gz",
+        "problems/statgen_cis_mvmr_winnerscurse_scaling_ldaware/data_files/dataset_metadata.tsv.gz",
+        "problems/statgen_cis_mvmr_winnerscurse_scaling_ldaware/data_files/variant_metadata.tsv.gz",
+        "problems/statgen_cis_mvmr_winnerscurse_scaling_ldaware/data_files/protein_measurements.tsv.gz",
+        "problems/statgen_cis_mvmr_winnerscurse_scaling_ldaware/data_files/locus_correlation_EUR.npz"
+      ],
+      "grader_type": "multi_numeric_tolerance",
+      "answer_fields": [
+        "theta_PROTA",
+        "theta_PROTB"
+      ],
+      "files": [
+        {
+          "path": "problems/statgen_cis_mvmr_winnerscurse_scaling_ldaware/eval_config.json",
+          "bytes": 2023,
+          "sha256": "faa94dd650081c1083b859aef48589d6d432dd4e68a3078c9f23e797d3417204"
+        },
+        {
+          "path": "problems/statgen_cis_mvmr_winnerscurse_scaling_ldaware/report_public.pdf",
+          "bytes": 1069380,
+          "sha256": "fdc06b6f69b570b0f91523c81ac3016030f2c04c42453b35c2b3a04a29a0c94d"
+        },
+        {
+          "path": "problems/statgen_cis_mvmr_winnerscurse_scaling_ldaware/data_files/protein_PROTA_phase1.tsv.gz",
+          "bytes": 3501,
+          "sha256": "45a2bd08a0a05ceb814c858ff473cec2f7af7ebfe81bf2c640dd270f96200752"
+        },
+        {
+          "path": "problems/statgen_cis_mvmr_winnerscurse_scaling_ldaware/data_files/protein_PROTA_phase2.tsv.gz",
+          "bytes": 3495,
+          "sha256": "44697e68dd4bd0e3d6fe850be7bcbe8d1a134e392b96ebbfdac8a52ccb02f601"
+        },
+        {
+          "path": "problems/statgen_cis_mvmr_winnerscurse_scaling_ldaware/data_files/protein_PROTB_phase1.tsv.gz",
+          "bytes": 3525,
+          "sha256": "6321a8bba6251e88e139598c8752d5869e36e01fc92c4cd5f40a0d35a370fe2e"
+        },
+        {
+          "path": "problems/statgen_cis_mvmr_winnerscurse_scaling_ldaware/data_files/protein_PROTB_phase2.tsv.gz",
+          "bytes": 3546,
+          "sha256": "4288f188cf2266cf67b952a3f1728a423a4b499b33c47ec782e055aecd60a554"
+        },
+        {
+          "path": "problems/statgen_cis_mvmr_winnerscurse_scaling_ldaware/data_files/disease_association.tsv.gz",
+          "bytes": 3580,
+          "sha256": "f68c29ac4960e870ec5da7a6079675d18c08b4a03aef08b8f084efd9ff8d14ad"
+        },
+        {
+          "path": "problems/statgen_cis_mvmr_winnerscurse_scaling_ldaware/data_files/dataset_metadata.tsv.gz",
+          "bytes": 232,
+          "sha256": "205c54cd25ed1c3662a3e6e1a85eaddc909c733b2bd1b6620031703f19e05185"
+        },
+        {
+          "path": "problems/statgen_cis_mvmr_winnerscurse_scaling_ldaware/data_files/variant_metadata.tsv.gz",
+          "bytes": 913,
+          "sha256": "98f32fdbbd1490923c6977520565e22baeaf689fb25a1261ee32e646e8ba29c6"
+        },
+        {
+          "path": "problems/statgen_cis_mvmr_winnerscurse_scaling_ldaware/data_files/protein_measurements.tsv.gz",
+          "bytes": 13555,
+          "sha256": "9a88a6d28811b42c8546ac8eaf49a63fdad457a630d5446028b833ded18a1b86"
+        },
+        {
+          "path": "problems/statgen_cis_mvmr_winnerscurse_scaling_ldaware/data_files/locus_correlation_EUR.npz",
+          "bytes": 3622,
+          "sha256": "24e3df268594be77aa35521b516e5bcb505ab231fcc0ad3bddec6dc284f80c11"
+        }
+      ]
+    },
+    {
+      "release_order": 2,
+      "eval_id": "txr1_mtb_causal_sv",
+      "title": "Synthetic structural-variant driven tumor therapy decision",
+      "domain": "Cancer somatic / clinical genomics",
+      "eval_uuid": "0e5c8fd6-aac7-4aa0-915d-5e6b0d550c99",
+      "problem_dir": "problems/txr1_mtb_causal_sv",
+      "eval_config": "problems/txr1_mtb_causal_sv/eval_config.json",
+      "report": "problems/txr1_mtb_causal_sv/report_public.pdf",
+      "data_files": [
+        "problems/txr1_mtb_causal_sv/data_files/clinical_registry.tsv.gz",
+        "problems/txr1_mtb_causal_sv/data_files/tumor_assay_metrics.tsv.gz",
+        "problems/txr1_mtb_causal_sv/data_files/longread_txr1_region.tsv.gz",
+        "problems/txr1_mtb_causal_sv/data_files/expression_summary.tsv.gz",
+        "problems/txr1_mtb_causal_sv/data_files/germline_pgx.tsv.gz",
+        "problems/txr1_mtb_causal_sv/data_files/dlr1_allele_table.tsv.gz",
+        "problems/txr1_mtb_causal_sv/data_files/data_dictionary.tsv.gz"
+      ],
+      "grader_type": "composite",
+      "answer_fields": [
+        "benefit_rd_pp",
+        "net_clinical_utility_pp",
+        "therapy_class_code",
+        "toxicity_dropout_risk_pp"
+      ],
+      "files": [
+        {
+          "path": "problems/txr1_mtb_causal_sv/eval_config.json",
+          "bytes": 2532,
+          "sha256": "1a317b60aab1504bb41bfdbc3d75175f1dbc85b1cab9775cddb8833f7cff3f3e"
+        },
+        {
+          "path": "problems/txr1_mtb_causal_sv/report_public.pdf",
+          "bytes": 2905343,
+          "sha256": "3c459331786b109d3dc1131f9f2a31fa37f460d75616b67c00d920a7c9a3156b"
+        },
+        {
+          "path": "problems/txr1_mtb_causal_sv/data_files/clinical_registry.tsv.gz",
+          "bytes": 27125,
+          "sha256": "1bd5a50f2cc6a8ac877619caf1f80a1c612d27a41f21307ba22a47d7468c25be"
+        },
+        {
+          "path": "problems/txr1_mtb_causal_sv/data_files/tumor_assay_metrics.tsv.gz",
+          "bytes": 29982,
+          "sha256": "b50584c70255eeacd4637685858d548ddcb84f26c93b4db41715534475954481"
+        },
+        {
+          "path": "problems/txr1_mtb_causal_sv/data_files/longread_txr1_region.tsv.gz",
+          "bytes": 55871,
+          "sha256": "a46a117ef85dcc8d00209c7fcb8a1200690239d03a07a60d2c9a5135cfa876bf"
+        },
+        {
+          "path": "problems/txr1_mtb_causal_sv/data_files/expression_summary.tsv.gz",
+          "bytes": 34413,
+          "sha256": "ac093b14ebabc304ded38771fa49e0d6201026e7dd9631900a163fdea37b453c"
+        },
+        {
+          "path": "problems/txr1_mtb_causal_sv/data_files/germline_pgx.tsv.gz",
+          "bytes": 10943,
+          "sha256": "c49a5c655431cea6ec744e6a03720f179f52732d0336e96898ce02221a9245f6"
+        },
+        {
+          "path": "problems/txr1_mtb_causal_sv/data_files/dlr1_allele_table.tsv.gz",
+          "bytes": 149,
+          "sha256": "0a959c433c9622f229a84e15fe95039fd2182110eefd8617d311411bf91309d8"
+        },
+        {
+          "path": "problems/txr1_mtb_causal_sv/data_files/data_dictionary.tsv.gz",
+          "bytes": 894,
+          "sha256": "cd0ed3ffc91618415ac99760f0d83ae85bb96811c4326b7508ce9690bb089e05"
+        }
+      ]
+    },
+    {
+      "release_order": 3,
+      "eval_id": "structural_inversion_subhap_expression_risk",
+      "title": "Structural inversion subhaplotype expression and disease risk",
+      "domain": "Clinical genomics",
+      "eval_uuid": "8f2b6b7c-0e79-4f06-9b2e-7d49a7cb88c2",
+      "problem_dir": "problems/structural_inversion_subhap_expression_risk",
+      "eval_config": "problems/structural_inversion_subhap_expression_risk/eval_config.json",
+      "report": "problems/structural_inversion_subhap_expression_risk/report_public.pdf",
+      "data_files": [
+        "problems/structural_inversion_subhap_expression_risk/data_files/cohort.tsv.gz",
+        "problems/structural_inversion_subhap_expression_risk/data_files/tag_markers.tsv.gz",
+        "problems/structural_inversion_subhap_expression_risk/data_files/marker_info.tsv.gz",
+        "problems/structural_inversion_subhap_expression_risk/data_files/breakpoint_panel.tsv.gz",
+        "problems/structural_inversion_subhap_expression_risk/data_files/expression_panel.tsv.gz",
+        "problems/structural_inversion_subhap_expression_risk/data_files/sampling_design.tsv.gz",
+        "problems/structural_inversion_subhap_expression_risk/data_files/file_notes.tsv.gz"
+      ],
+      "grader_type": "composite",
+      "answer_fields": [
+        "expression_log_fc",
+        "n_calibrated_carriers",
+        "subhap_log_or",
+        "target_support_code"
+      ],
+      "files": [
+        {
+          "path": "problems/structural_inversion_subhap_expression_risk/eval_config.json",
+          "bytes": 2567,
+          "sha256": "f4cdce71e999684636ab12ebf905f5d8969fd5ab6b0c073e6d4926fcf9848610"
+        },
+        {
+          "path": "problems/structural_inversion_subhap_expression_risk/report_public.pdf",
+          "bytes": 1840851,
+          "sha256": "561c9cbec34e364a10d35efd92d0af9b6aac312defd3f2079d490f0c0fbc9f32"
+        },
+        {
+          "path": "problems/structural_inversion_subhap_expression_risk/data_files/cohort.tsv.gz",
+          "bytes": 36127,
+          "sha256": "fb39acd2769731e60c4f482050588d3344751c9ee57494a5eeca9d347a472d4c"
+        },
+        {
+          "path": "problems/structural_inversion_subhap_expression_risk/data_files/tag_markers.tsv.gz",
+          "bytes": 153705,
+          "sha256": "ae25dff6d5f9ab5fcdb1a3e225232cc3f33f4471411bd429ee3ed5e607f63c70"
+        },
+        {
+          "path": "problems/structural_inversion_subhap_expression_risk/data_files/marker_info.tsv.gz",
+          "bytes": 449,
+          "sha256": "338fc6a72ed954a23081132b65b580d4fa0cffd8811da9ec501ded7452fdb717"
+        },
+        {
+          "path": "problems/structural_inversion_subhap_expression_risk/data_files/breakpoint_panel.tsv.gz",
+          "bytes": 15300,
+          "sha256": "4ea40498a8321f0622439bc756ee236080230edb852e0857c3c69794916265ff"
+        },
+        {
+          "path": "problems/structural_inversion_subhap_expression_risk/data_files/expression_panel.tsv.gz",
+          "bytes": 35644,
+          "sha256": "1a45a75c08ed341f05185e51cb601d71ce665e44b06f431946c605eee96319b6"
+        },
+        {
+          "path": "problems/structural_inversion_subhap_expression_risk/data_files/sampling_design.tsv.gz",
+          "bytes": 1423,
+          "sha256": "54bb51cf81a7b9314fa74d2b6b23f731b832e9e1b20b78531acd85a9312be112"
+        },
+        {
+          "path": "problems/structural_inversion_subhap_expression_risk/data_files/file_notes.tsv.gz",
+          "bytes": 999,
+          "sha256": "a9acde7fc077dd8f523e7c9e4b3ecfb48c9187345a8351f2f25835123048d508"
+        }
+      ]
+    },
+    {
+      "release_order": 4,
+      "eval_id": "wf_selection",
+      "title": "Wright-Fisher selection inference from allele-frequency trajectories",
+      "domain": "Population genetics",
+      "eval_uuid": "827e830e-eddd-4dbf-a359-05afa5e4a85e",
+      "problem_dir": "problems/wf_selection",
+      "eval_config": "problems/wf_selection/eval_config.json",
+      "report": "problems/wf_selection/report_public.pdf",
+      "data_files": [
+        "problems/wf_selection/data_files/locus_A_timeseries.tsv.gz",
+        "problems/wf_selection/data_files/locus_B_timeseries.tsv.gz",
+        "problems/wf_selection/data_files/variant_info.tsv.gz",
+        "problems/wf_selection/data_files/Ne_schedule.tsv.gz"
+      ],
+      "grader_type": "composite",
+      "answer_fields": [
+        "s",
+        "selected_locus"
+      ],
+      "files": [
+        {
+          "path": "problems/wf_selection/eval_config.json",
+          "bytes": 1767,
+          "sha256": "3fb196137abf41946978c19f5555a729a76ac6988463f345e7b7132a2234cb04"
+        },
+        {
+          "path": "problems/wf_selection/report_public.pdf",
+          "bytes": 921881,
+          "sha256": "d0af059c538232b17b1195b290ae308170f19fb04728964131f9788396ea6e17"
+        },
+        {
+          "path": "problems/wf_selection/data_files/locus_A_timeseries.tsv.gz",
+          "bytes": 185,
+          "sha256": "98ef5fb46051bf9f5c300c2ad4ba23a9d71757ce08f5e4c826ad390b2d78128b"
+        },
+        {
+          "path": "problems/wf_selection/data_files/locus_B_timeseries.tsv.gz",
+          "bytes": 188,
+          "sha256": "e1a8757749ce547f1503a099caf10cc64aef9f3df4dfdeed5b5a78eda1280989"
+        },
+        {
+          "path": "problems/wf_selection/data_files/variant_info.tsv.gz",
+          "bytes": 77,
+          "sha256": "fb086aef085a0a10984eb5dd21c629958a056f900ea671bee5bbefe457d05e0c"
+        },
+        {
+          "path": "problems/wf_selection/data_files/Ne_schedule.tsv.gz",
+          "bytes": 98,
+          "sha256": "bd7c407678e59c2d642499edd877ccb6dd6b208fff0c1619cbac4d2e9f4caafc"
+        }
+      ]
+    },
+    {
+      "release_order": 5,
+      "eval_id": "hic_sv_masked_loop_strength",
+      "title": "Masked Hi-C loop strength under structural variation",
+      "domain": "3D genomics / structural variation",
+      "eval_uuid": "5258a320-6060-42e5-af4e-4c09f054d7dd",
+      "problem_dir": "problems/hic_sv_masked_loop_strength",
+      "eval_config": "problems/hic_sv_masked_loop_strength/eval_config.json",
+      "report": "problems/hic_sv_masked_loop_strength/report_public.pdf",
+      "data_files": [
+        "problems/hic_sv_masked_loop_strength/data_files/bins_20kb.tsv.gz",
+        "problems/hic_sv_masked_loop_strength/data_files/contacts_20kb.tsv.gz",
+        "problems/hic_sv_masked_loop_strength/data_files/bins_40kb.tsv.gz",
+        "problems/hic_sv_masked_loop_strength/data_files/contacts_40kb.tsv.gz"
+      ],
+      "grader_type": "multi_numeric_tolerance",
+      "answer_fields": [
+        "case_loop_strength",
+        "control_loop_strength",
+        "delta_loop_strength"
+      ],
+      "files": [
+        {
+          "path": "problems/hic_sv_masked_loop_strength/eval_config.json",
+          "bytes": 1836,
+          "sha256": "8a079991c1a788912141089802f109f4bce47b27b4d3c74d7cee26fbd78aa714"
+        },
+        {
+          "path": "problems/hic_sv_masked_loop_strength/report_public.pdf",
+          "bytes": 1423115,
+          "sha256": "369c32605e918a89f8d9caf8c9a19efb1f954df7e93692a9f62b197464d32d46"
+        },
+        {
+          "path": "problems/hic_sv_masked_loop_strength/data_files/bins_20kb.tsv.gz",
+          "bytes": 703,
+          "sha256": "e0d014ac835845b40170229f2ec42aa414298ca821890e9beacc6054b022f42d"
+        },
+        {
+          "path": "problems/hic_sv_masked_loop_strength/data_files/contacts_20kb.tsv.gz",
+          "bytes": 4975,
+          "sha256": "ea800eb30b60203f92444e1b7ac16de07028f59e3299eb3b01e22d3efd4dd7a7"
+        },
+        {
+          "path": "problems/hic_sv_masked_loop_strength/data_files/bins_40kb.tsv.gz",
+          "bytes": 421,
+          "sha256": "a1324ce9d4ae4cc9751885bf81972f7ee3acd5bc9011d7afabd31288d9f2b69a"
+        },
+        {
+          "path": "problems/hic_sv_masked_loop_strength/data_files/contacts_40kb.tsv.gz",
+          "bytes": 1336,
+          "sha256": "d758e56557731b38ecaad26a1fa1a452dfd0b1edff33dc8ffaf4884552c8699e"
+        }
+      ]
+    },
+    {
+      "release_order": 6,
+      "eval_id": "statgen_scrna_ambient_state_eqtl",
+      "title": "Ambient RNA and cell-state-aware eQTL mapping",
+      "domain": "Single-cell statistical genetics",
+      "eval_uuid": "9a63a4a4-0b1c-4c59-bf11-1bf2f9c1c8a1",
+      "problem_dir": "problems/statgen_scrna_ambient_state_eqtl",
+      "eval_config": "problems/statgen_scrna_ambient_state_eqtl/eval_config.json",
+      "report": "problems/statgen_scrna_ambient_state_eqtl/report_public.pdf",
+      "data_files": [
+        "problems/statgen_scrna_ambient_state_eqtl/data_files/cells.csv.gz",
+        "problems/statgen_scrna_ambient_state_eqtl/data_files/donors.csv.gz",
+        "problems/statgen_scrna_ambient_state_eqtl/data_files/empty_drops.csv.gz"
+      ],
+      "grader_type": "numeric_tolerance",
+      "answer_fields": [
+        "beta_activated"
+      ],
+      "files": [
+        {
+          "path": "problems/statgen_scrna_ambient_state_eqtl/eval_config.json",
+          "bytes": 1142,
+          "sha256": "f32e4e144756291c651a59dec3972c66959be1626a4e9e50039f22387c34f470"
+        },
+        {
+          "path": "problems/statgen_scrna_ambient_state_eqtl/report_public.pdf",
+          "bytes": 1474879,
+          "sha256": "1d18cbb9f63d288fc8ffb41a5901e0f1f97d06fcc63b25415e69dca0fa823e77"
+        },
+        {
+          "path": "problems/statgen_scrna_ambient_state_eqtl/data_files/cells.csv.gz",
+          "bytes": 6446,
+          "sha256": "3ce9bdfda2020e875f9cdc6a896b820ffc3c53f2cbf663d5cb8f022255e67575"
+        },
+        {
+          "path": "problems/statgen_scrna_ambient_state_eqtl/data_files/donors.csv.gz",
+          "bytes": 224,
+          "sha256": "6dc5e09f863bc3c326e67aee6abe452b8089765ff3adafb3e627c4521d5a6f3f"
+        },
+        {
+          "path": "problems/statgen_scrna_ambient_state_eqtl/data_files/empty_drops.csv.gz",
+          "bytes": 1046,
+          "sha256": "8a344bd63779ec0e2d21146f5bac6a260345e272b529b8870a4ac032d0c0124c"
+        }
+      ]
+    },
+    {
+      "release_order": 7,
+      "eval_id": "carrier_cnv_pseudogene_residual_risk",
+      "title": "DRX1 carrier-screening residual risk under CNV and pseudogene calibration",
+      "domain": "Clinical genomics / carrier screening",
+      "eval_uuid": "a1c4f0e7-6bd1-4ed2-8c68-9f59ac830d9f",
+      "problem_dir": "problems/carrier_cnv_pseudogene_residual_risk",
+      "eval_config": "problems/carrier_cnv_pseudogene_residual_risk/eval_config.json",
+      "report": "problems/carrier_cnv_pseudogene_residual_risk/report_public.pdf",
+      "data_files": [
+        "problems/carrier_cnv_pseudogene_residual_risk/data_files/cohort_roster.tsv.gz",
+        "problems/carrier_cnv_pseudogene_residual_risk/data_files/partner_roster.tsv.gz",
+        "problems/carrier_cnv_pseudogene_residual_risk/data_files/calibration_controls.tsv.gz",
+        "problems/carrier_cnv_pseudogene_residual_risk/data_files/target_metadata.tsv.gz",
+        "problems/carrier_cnv_pseudogene_residual_risk/data_files/assay_observations.tsv.gz"
+      ],
+      "grader_type": "multi_numeric_tolerance",
+      "answer_fields": [
+        "carrier_frequency_afr",
+        "carrier_frequency_eur",
+        "residual_carrier_risk_afr_negative",
+        "partner_carrier_frequency_full_roster",
+        "couple_reproductive_risk"
+      ],
+      "files": [
+        {
+          "path": "problems/carrier_cnv_pseudogene_residual_risk/eval_config.json",
+          "bytes": 3054,
+          "sha256": "0909874691dfadb0ae6bbc59dcab734e5539f0d1c476accbf3f7d90f35f69ddc"
+        },
+        {
+          "path": "problems/carrier_cnv_pseudogene_residual_risk/report_public.pdf",
+          "bytes": 2089034,
+          "sha256": "05097045111f7fee64ca4ac1d37cc232c06835978609a6d1825fe3d42642a55c"
+        },
+        {
+          "path": "problems/carrier_cnv_pseudogene_residual_risk/data_files/cohort_roster.tsv.gz",
+          "bytes": 1996,
+          "sha256": "117709ca931f54ba55f3a9c8b6ee95806b32261f50226ef7605546f6e6e2ef26"
+        },
+        {
+          "path": "problems/carrier_cnv_pseudogene_residual_risk/data_files/partner_roster.tsv.gz",
+          "bytes": 2586,
+          "sha256": "b870830e1e8f0b5faea45cec4f420c4335c884714d78ec735282f7cdade694f0"
+        },
+        {
+          "path": "problems/carrier_cnv_pseudogene_residual_risk/data_files/calibration_controls.tsv.gz",
+          "bytes": 5708,
+          "sha256": "aa0ec442a9240fb40ba07350f468e685ddf704b888dedb1ccd865cd7d5bebc68"
+        },
+        {
+          "path": "problems/carrier_cnv_pseudogene_residual_risk/data_files/target_metadata.tsv.gz",
+          "bytes": 273,
+          "sha256": "c59b4f642617bf1230b0b73629069942080d3049cd9e34cd28f14617122846e7"
+        },
+        {
+          "path": "problems/carrier_cnv_pseudogene_residual_risk/data_files/assay_observations.tsv.gz",
+          "bytes": 173313,
+          "sha256": "1f79c59f79361c26a0419ebb9781953b27be1bab949cb44d50d36f334e652b64"
+        }
+      ]
+    },
+    {
+      "release_order": 8,
+      "eval_id": "crispri_casrx_transcript_vs_locus",
+      "title": "Transcript-vs-locus CRISPRi decision with CasRx follow-up",
+      "domain": "Functional genomics",
+      "eval_uuid": "b3addd51-ea5f-47b7-ba90-ce2f3a523838",
+      "problem_dir": "problems/crispri_casrx_transcript_vs_locus",
+      "eval_config": "problems/crispri_casrx_transcript_vs_locus/eval_config.json",
+      "report": "problems/crispri_casrx_transcript_vs_locus/report_public.pdf",
+      "data_files": [
+        "problems/crispri_casrx_transcript_vs_locus/data_files/guide_map.tsv.gz",
+        "problems/crispri_casrx_transcript_vs_locus/data_files/crispri_counts.tsv.gz",
+        "problems/crispri_casrx_transcript_vs_locus/data_files/local_expression.tsv.gz",
+        "problems/crispri_casrx_transcript_vs_locus/data_files/casrx_followup.tsv.gz",
+        "problems/crispri_casrx_transcript_vs_locus/data_files/guide_followup.tsv.gz"
+      ],
+      "grader_type": "composite",
+      "answer_fields": [
+        "advance_target",
+        "lncrna_specific_lfc",
+        "neighbor_mediated_lfc"
+      ],
+      "files": [
+        {
+          "path": "problems/crispri_casrx_transcript_vs_locus/eval_config.json",
+          "bytes": 2656,
+          "sha256": "8b1e141ab84ba981e09884babbcb7593ccf8091dbfb3b3994cd251a43502ddd3"
+        },
+        {
+          "path": "problems/crispri_casrx_transcript_vs_locus/report_public.pdf",
+          "bytes": 1663617,
+          "sha256": "a0a0e124d546c9cd6667246ed98e4c2fcaeed8df914b6cb90bdc28a205d50e83"
+        },
+        {
+          "path": "problems/crispri_casrx_transcript_vs_locus/data_files/guide_map.tsv.gz",
+          "bytes": 1147,
+          "sha256": "f04220ac30818ef059223faed31d9f4d9e55a1512ca85a181a11850eb2ef38c9"
+        },
+        {
+          "path": "problems/crispri_casrx_transcript_vs_locus/data_files/crispri_counts.tsv.gz",
+          "bytes": 1287,
+          "sha256": "fdd578a0f9a1495521bed2b203a0c2ccb445822bb09f39768de5bf93c879341c"
+        },
+        {
+          "path": "problems/crispri_casrx_transcript_vs_locus/data_files/local_expression.tsv.gz",
+          "bytes": 1206,
+          "sha256": "a9fdd0862c764c3287c649581d8f6978742e9de34bc1ccc190732d149f4774d1"
+        },
+        {
+          "path": "problems/crispri_casrx_transcript_vs_locus/data_files/casrx_followup.tsv.gz",
+          "bytes": 315,
+          "sha256": "37eb845131438a0dd4a8d50319d97085d0592d278c3cea3ac0847c715a873ca9"
+        },
+        {
+          "path": "problems/crispri_casrx_transcript_vs_locus/data_files/guide_followup.tsv.gz",
+          "bytes": 211,
+          "sha256": "f338be3881192a0d6b3e51bf0076d8f05b4185d05b4bcf07287de4e82b5dbac8"
+        }
+      ]
+    },
+    {
+      "release_order": 9,
+      "eval_id": "popgen_recent_pulse_sexbias",
+      "title": "Recent sex-biased admixture pulse inference",
+      "domain": "Population genetics",
+      "eval_uuid": "0f5be8db-d8ff-4f55-902c-760a6a42b733",
+      "problem_dir": "problems/popgen_recent_pulse_sexbias",
+      "eval_config": "problems/popgen_recent_pulse_sexbias/eval_config.json",
+      "report": "problems/popgen_recent_pulse_sexbias/report_public.pdf",
+      "data_files": [
+        "problems/popgen_recent_pulse_sexbias/data_files/segments.tsv.gz",
+        "problems/popgen_recent_pulse_sexbias/data_files/map_info.tsv.gz"
+      ],
+      "grader_type": "multi_numeric_tolerance",
+      "answer_fields": [
+        "parent1_A_fraction",
+        "parent1_t",
+        "parent2_A_fraction",
+        "parent2_t"
+      ],
+      "files": [
+        {
+          "path": "problems/popgen_recent_pulse_sexbias/eval_config.json",
+          "bytes": 1964,
+          "sha256": "690dc9ed02e8fc955a20ca1870bd1c67e74736e83d04d2fff1973125ff713971"
+        },
+        {
+          "path": "problems/popgen_recent_pulse_sexbias/report_public.pdf",
+          "bytes": 1001723,
+          "sha256": "2b7283d929470bb7e102e15aa14121d444677c370faadfca5af9e8bb4b25093c"
+        },
+        {
+          "path": "problems/popgen_recent_pulse_sexbias/data_files/segments.tsv.gz",
+          "bytes": 662,
+          "sha256": "efddadacbc9fd54f94a7437f55379251a3388a188d25b8d646b9bfedd5a39f3b"
+        },
+        {
+          "path": "problems/popgen_recent_pulse_sexbias/data_files/map_info.tsv.gz",
+          "bytes": 83,
+          "sha256": "d6d23058ebd00fd2f5a0e363bc37cc828f2684d48f09361120e35621f54a28de"
+        }
+      ]
+    }
+  ]
+}

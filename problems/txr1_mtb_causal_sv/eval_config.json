@@ -1,0 +1,42 @@
+{
+  "data_files": [
+    "data_files/clinical_registry.tsv.gz",
+    "data_files/tumor_assay_metrics.tsv.gz",
+    "data_files/longread_txr1_region.tsv.gz",
+    "data_files/expression_summary.tsv.gz",
+    "data_files/germline_pgx.tsv.gz",
+    "data_files/dlr1_allele_table.tsv.gz",
+    "data_files/data_dictionary.tsv.gz"
+  ],
+  "eval_uuid": "0e5c8fd6-aac7-4aa0-915d-5e6b0d550c99",
+  "grader": {
+    "config": {
+      "integer_keys": {
+        "therapy_class_code": {
+          "max_value": 1,
+          "min_value": 0
+        }
+      },
+      "numeric_keys": {
+        "benefit_rd_pp": {
+          "absolute_tolerance": 0.5
+        },
+        "net_clinical_utility_pp": {
+          "absolute_tolerance": 0.4
+        },
+        "toxicity_dropout_risk_pp": {
+          "absolute_tolerance": 1.0
+        }
+      }
+    },
+    "type": "composite"
+  },
+  "ground_truth": {
+    "benefit_rd_pp": 42.9143,
+    "net_clinical_utility_pp": 30.3252,
+    "therapy_class_code": 1,
+    "toxicity_dropout_risk_pp": 35.9689
+  },
+  "id": "txr1_mtb_causal_sv",
+  "task": "A molecular tumor board registry contains trial-eligible advanced solid-tumor cases considered for a TXR1-directed inhibitor. Estimate, for tumors with SV-driven TXR1 target-mediated activation at time zero, the marginal effect of TXR1i versus non-TXR1 systemic therapy on week-16 clinical benefit as if all patients had an assessable week-16 visit. Also estimate the 8-week treatment-limiting toxicity/discontinuation risk under TXR1i in the same target population. Report net clinical utility = benefit risk difference (percentage points) - 0.35 * toxicity risk (percentage points), and choose therapy_class_code 1 if TXR1i has positive net utility and 0 otherwise.\n\nUse percentage-point units for all non-code quantities. Positive benefit means TXR1i improves week-16 clinical benefit relative to non-TXR1 systemic therapy.\n\nThese data came from a real experiment; you will be graded not just on numerical correctness but the quality of analytical reasoning you exhibit; do not attempt to take any shortcuts.\n\nReturn your final answer as exactly one JSON object.\nDo not wrap the JSON in markdown.\nDo not add prose before or after the JSON.\nDo not omit any keys shown in the example.\nReturn the JSON object in your final answer:\n {\n  \"answer\": {\n    \"therapy_class_code\": <int>,\n    \"benefit_rd_pp\": <float>,\n    \"toxicity_dropout_risk_pp\": <float>,\n    \"net_clinical_utility_pp\": <float>\n  },\n  \"reasoning\": \"<description of method and QC>\"\n}"
+}

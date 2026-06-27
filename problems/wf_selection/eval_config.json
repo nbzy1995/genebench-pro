@@ -1,0 +1,34 @@
+{
+  "data_files": [
+    "data_files/locus_A_timeseries.tsv.gz",
+    "data_files/locus_B_timeseries.tsv.gz",
+    "data_files/variant_info.tsv.gz",
+    "data_files/Ne_schedule.tsv.gz"
+  ],
+  "eval_uuid": "827e830e-eddd-4dbf-a359-05afa5e4a85e",
+  "grader": {
+    "config": {
+      "exact_match_keys": {
+        "selected_locus": {
+          "case_sensitive": true,
+          "required": true
+        }
+      },
+      "numeric_keys": {
+        "s": {
+          "absolute_tolerance": 0.02,
+          "max_value": 1.0,
+          "min_value": -1.0,
+          "required": true
+        }
+      }
+    },
+    "type": "composite"
+  },
+  "ground_truth": {
+    "s": 0.101256,
+    "selected_locus": "A"
+  },
+  "id": "wf_selection",
+  "task": "You are given allele-frequency time series data from two haploid loci sampled over multiple generations.\nOne locus is under stronger positive selection than the other. Estimate the selection coefficient s for the more strongly selected locus, where s > 0 means the derived allele is favored.\nAssume instrument-driven sequencing error is ~1%. The seq_error column is the average of the two directional allele-miscall rates for that locus and sample.\nThe selected_locus value must be \"A\" or \"B\".\nThese data came from a real experiment; you will be graded not just on numerical correctness but the quality of analytical reasoning you exhibit; do not attempt to take any shortcuts.\nReturn your final answer as exactly one JSON object.\nDo not wrap the JSON in markdown.\nDo not add prose before or after the JSON.\nDo not omit any keys shown in the example.\nReturn the JSON object in your final answer:\n{\n\"answer\": {\n\"selected_locus\": \"<string>\",\n\"s\": <float>\n},\n\"reasoning\": \"<description of method and QC>\"\n}"
+}

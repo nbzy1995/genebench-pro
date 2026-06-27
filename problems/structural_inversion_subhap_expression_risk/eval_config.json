@@ -1,0 +1,44 @@
+{
+  "data_files": [
+    "data_files/cohort.tsv.gz",
+    "data_files/tag_markers.tsv.gz",
+    "data_files/marker_info.tsv.gz",
+    "data_files/breakpoint_panel.tsv.gz",
+    "data_files/expression_panel.tsv.gz",
+    "data_files/sampling_design.tsv.gz",
+    "data_files/file_notes.tsv.gz"
+  ],
+  "eval_uuid": "8f2b6b7c-0e79-4f06-9b2e-7d49a7cb88c2",
+  "grader": {
+    "config": {
+      "forbid_extra_keys": true,
+      "integer_keys": {
+        "n_calibrated_carriers": {
+          "min_value": 0
+        },
+        "target_support_code": {
+          "max_value": 1,
+          "min_value": 0
+        }
+      },
+      "numeric_keys": {
+        "expression_log_fc": {
+          "absolute_tolerance": 0.03
+        },
+        "subhap_log_or": {
+          "absolute_tolerance": 0.055
+        }
+      },
+      "strict_answer_schema": true
+    },
+    "type": "composite"
+  },
+  "ground_truth": {
+    "expression_log_fc": 0.333341,
+    "n_calibrated_carriers": 195,
+    "subhap_log_or": -0.400921,
+    "target_support_code": 1
+  },
+  "id": "structural_inversion_subhap_expression_risk",
+  "task": "Analyze the released files for anonymous Locus Q. Estimate the full-cohort source-population clinical association and molecular expression support for the calibrated nested segment-B structural copy dosage, separating the nested segment-B dosage from the broader outer-orientation dosage. Report subhap_log_or as the natural-log source-population total-effect odds ratio for case status per additional calibrated segment-B copy. Report expression_log_fc as the natural-log expression fold-change per calibrated segment-B copy for the expression-supported gene. Report target_support_code as 1 if the supported gene has a positive expression_log_fc and the clinical association is protective (subhap_log_or < 0), otherwise 0. Report n_calibrated_carriers as the number of reliable breakpoint-panel samples carrying at least one segment-B copy.\nThese data came from a real experiment; you will be graded not just on numerical correctness but the quality of analytical reasoning you exhibit; do not attempt to take any shortcuts.\nReturn your final answer as exactly one JSON object.\nDo not wrap the JSON in markdown.\nDo not add prose before or after the JSON.\nDo not omit any keys shown in the example.\nReturn the JSON object in your final answer:\n{\n  \"answer\": {\n    \"n_calibrated_carriers\": <int>,\n    \"target_support_code\": <int>,\n    \"expression_log_fc\": <float>,\n    \"subhap_log_or\": <float>\n  },\n  \"reasoning\": \"<description of method and QC>\"\n}"
+}

@@ -1,0 +1,36 @@
+{
+  "data_files": [
+    "data_files/guide_map.tsv.gz",
+    "data_files/crispri_counts.tsv.gz",
+    "data_files/local_expression.tsv.gz",
+    "data_files/casrx_followup.tsv.gz",
+    "data_files/guide_followup.tsv.gz"
+  ],
+  "eval_uuid": "b3addd51-ea5f-47b7-ba90-ce2f3a523838",
+  "grader": {
+    "config": {
+      "integer_keys": {
+        "advance_target": {
+          "max_value": 1,
+          "min_value": 0
+        }
+      },
+      "numeric_keys": {
+        "lncrna_specific_lfc": {
+          "absolute_tolerance": 0.01
+        },
+        "neighbor_mediated_lfc": {
+          "absolute_tolerance": 0.03
+        }
+      }
+    },
+    "type": "composite"
+  },
+  "ground_truth": {
+    "advance_target": 0,
+    "lncrna_specific_lfc": -0.048012,
+    "neighbor_mediated_lfc": -0.638492
+  },
+  "id": "crispri_casrx_transcript_vs_locus",
+  "task": "You are given pooled CRISPRi screening data, guide-level local expression measurements, transcript-targeting CasRx follow-up data, and single-guide follow-up growth measurements for a nominated lncRNA program (LINC473) and a nearby coding gene (KIN1). The identifiers LINC473, KIN1, and ANKRD42 are synthetic benchmark labels; any resemblance to real human genes is coincidental.\nEstimate the requested quantities.\nDefinitions:\nlncrna_specific_lfc: the pooled-screen matched-control day-10 log2 growth effect expected at 100% effective knockdown of the dominant LINC473 transcript, not local DNA-locus effects.\nneighbor_mediated_lfc: the pooled-screen matched-control day-10 log2 growth effect expected at 100% KIN1 repression in the local LINC473-locus model after accounting for concomitant LINC473 transcript knockdown.\nadvance_target: 1 if the evidence supports advancing LINC473 as a transcript-directed target, else 0.\nConventions:\nall growth effects are log2(day10/day0) competitive-growth effects relative to matched controls;\nmore negative numbers indicate stronger loss of fitness;\nset advance_target to 1 only if lncrna_specific_lfc <= -0.08 and neighbor_mediated_lfc > -0.25; otherwise 0.\nThese data came from a real experiment; you will be graded not just on numerical correctness but the quality of analytical reasoning you exhibit; do not attempt to take any shortcuts.\nReturn your final answer as exactly one JSON object.\nDo not wrap the JSON in markdown.\nDo not add prose before or after the JSON.\nDo not omit any keys shown in the example.\nReturn the JSON object in your final answer:\n{\n  \"answer\": {\n    \"advance_target\": <int>,\n    \"lncrna_specific_lfc\": <float>,\n    \"neighbor_mediated_lfc\": <float>\n  },\n  \"reasoning\": \"<description of method and QC>\"\n}"
+}

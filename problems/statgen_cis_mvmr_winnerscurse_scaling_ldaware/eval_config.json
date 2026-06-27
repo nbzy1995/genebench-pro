@@ -1,0 +1,37 @@
+{
+  "data_files": [
+    "data_files/protein_PROTA_phase1.tsv.gz",
+    "data_files/protein_PROTA_phase2.tsv.gz",
+    "data_files/protein_PROTB_phase1.tsv.gz",
+    "data_files/protein_PROTB_phase2.tsv.gz",
+    "data_files/disease_association.tsv.gz",
+    "data_files/dataset_metadata.tsv.gz",
+    "data_files/variant_metadata.tsv.gz",
+    "data_files/protein_measurements.tsv.gz",
+    "data_files/locus_correlation_EUR.npz"
+  ],
+  "eval_uuid": "cc2f269a-6dd6-5cad-80e1-a579b214e7ce",
+  "grader": {
+    "config": {
+      "keys": {
+        "theta_PROTA": {
+          "absolute_tolerance": 0.025,
+          "max_value": 1.0,
+          "min_value": -1.0
+        },
+        "theta_PROTB": {
+          "absolute_tolerance": 0.025,
+          "max_value": 1.0,
+          "min_value": -1.0
+        }
+      }
+    },
+    "type": "multi_numeric_tolerance"
+  },
+  "ground_truth": {
+    "theta_PROTA": 0.2931551453124849,
+    "theta_PROTB": 0.22207276661877273
+  },
+  "id": "statgen_cis_mvmr_winnerscurse_scaling_ldaware",
+  "task": "You are given association summary statistics and metadata for two nearby proteins (PROTA and PROTB), a binary disease outcome, a locus correlation reference, and protein measurement records.\nGoal: estimate the direct log-odds effect of each protein on the disease outcome per +1 SD increase in log10 concentration, conditional on the other protein.\nInterpretation: theta_PROTA and theta_PROTB use the same log-odds per-SD scale defined in the goal.\nThese data came from a real experiment; you will be graded not just on numerical correctness but the quality of analytical reasoning you exhibit; do not attempt to take any shortcuts.\nReturn your final answer as exactly one JSON object.\nDo not wrap the JSON in markdown.\nDo not add prose before or after the JSON.\nDo not omit any keys shown in the example.\nReturn the JSON object in your final answer:\n{\n  \"answer\": {\n    \"theta_PROTA\": <float>,\n    \"theta_PROTB\": <float>\n  },\n  \"reasoning\": \"<description of method and QC>\"\n}"
+}

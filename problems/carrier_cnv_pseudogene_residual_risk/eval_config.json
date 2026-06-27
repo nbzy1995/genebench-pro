@@ -1,0 +1,51 @@
+{
+  "id": "carrier_cnv_pseudogene_residual_risk",
+  "eval_uuid": "a1c4f0e7-6bd1-4ed2-8c68-9f59ac830d9f",
+  "task": "Using cohort_roster.tsv.gz, partner_roster.tsv.gz, calibration_controls.tsv.gz, target_metadata.tsv.gz, and assay_observations.tsv.gz, estimate residual reproductive risk for an autosomal recessive DRX1 condition. Report all quantities on the probability scale, not as percentages: carrier_frequency_afr and carrier_frequency_eur among screening-roster adults; residual_carrier_risk_afr_negative for an AFR screening-roster adult with a negative DRX1 screen; partner_carrier_frequency_full_roster for a uniformly sampled partner_roster.tsv.gz row; and couple_reproductive_risk for an affected conceptus when the index person is AFR and screen-negative and the partner is drawn from partner_roster.tsv.gz. Assume autosomal recessive inheritance with a 1/4 affected-conceptus risk conditional on both biological parents being carriers.\nThese data came from a real experiment; you will be graded not just on numerical correctness but the quality of analytical reasoning you exhibit; do not attempt to take any shortcuts.\nReturn your final answer as exactly one JSON object.\nDo not wrap the JSON in markdown.\nDo not add prose before or after the JSON.\nDo not omit any keys shown in the example.\nReturn the JSON object in your final answer:\n{\n  \"answer\": {\n    \"carrier_frequency_afr\": <float>,\n    \"carrier_frequency_eur\": <float>,\n    \"residual_carrier_risk_afr_negative\": <float>,\n    \"partner_carrier_frequency_full_roster\": <float>,\n    \"couple_reproductive_risk\": <float>\n  },\n  \"reasoning\": \"<description of method and QC>\"\n}",
+  "data_files": [
+    "data_files/cohort_roster.tsv.gz",
+    "data_files/partner_roster.tsv.gz",
+    "data_files/calibration_controls.tsv.gz",
+    "data_files/target_metadata.tsv.gz",
+    "data_files/assay_observations.tsv.gz"
+  ],
+  "grader": {
+    "type": "multi_numeric_tolerance",
+    "config": {
+      "keys": {
+        "carrier_frequency_afr": {
+          "absolute_tolerance": 0.002,
+          "min_value": 0.0,
+          "max_value": 1.0
+        },
+        "carrier_frequency_eur": {
+          "absolute_tolerance": 0.002,
+          "min_value": 0.0,
+          "max_value": 1.0
+        },
+        "residual_carrier_risk_afr_negative": {
+          "absolute_tolerance": 0.0005,
+          "min_value": 0.0,
+          "max_value": 1.0
+        },
+        "partner_carrier_frequency_full_roster": {
+          "absolute_tolerance": 0.003,
+          "min_value": 0.0,
+          "max_value": 1.0
+        },
+        "couple_reproductive_risk": {
+          "absolute_tolerance": 0.0001,
+          "min_value": 0.0,
+          "max_value": 1.0
+        }
+      }
+    }
+  },
+  "ground_truth": {
+    "carrier_frequency_afr": 0.10029833131167426,
+    "carrier_frequency_eur": 0.07729841325501885,
+    "residual_carrier_risk_afr_negative": 0.03964428623156241,
+    "partner_carrier_frequency_full_roster": 0.279249390064499,
+    "couple_reproductive_risk": 0.0027676606874265544
+  }
+}

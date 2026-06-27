@@ -1,0 +1,34 @@
+{
+  "data_files": [
+    "data_files/markers.tsv.gz",
+    "data_files/founders.tsv.gz",
+    "data_files/ril_genotypes.npz",
+    "data_files/phenotypes.tsv.gz"
+  ],
+  "eval_uuid": "f8a2c4e1-9b3d-4f7a-8c5e-2d1f0a3b6c9e",
+  "grader": {
+    "config": {
+      "exact_match_keys": {
+        "high_founder": {
+          "case_sensitive": true,
+          "required": true
+        }
+      },
+      "numeric_keys": {
+        "qtl_pos_cM": {
+          "absolute_tolerance": 3.0,
+          "max_value": 100.0,
+          "min_value": 0.0,
+          "required": true
+        }
+      }
+    },
+    "type": "composite"
+  },
+  "ground_truth": {
+    "high_founder": "F5",
+    "qtl_pos_cM": 48.635551353449436
+  },
+  "id": "multiparent_qtl_hmm_lmm",
+  "task": "Map the chromosome 1 QTL in an 8-founder multi-parent population. Report the position (cM) and which founder carries the high-effect allele.\nReport high_founder as \"F1\"..\"F8\".\nThese data came from a real experiment; you will be graded not just on numerical correctness but the quality of analytical reasoning you exhibit; do not attempt to take any shortcuts.\nReturn your final answer as exactly one JSON object.\nDo not wrap the JSON in markdown.\nDo not add prose before or after the JSON.\nDo not omit any keys shown in the example.\nReturn the JSON object in your final answer:\n{\n\"answer\": {\n\"high_founder\": \"<string>\",\n\"qtl_pos_cM\": <float>\n},\n\"reasoning\": \"<description of method and QC>\"\n}"
+}

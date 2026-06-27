@@ -1,0 +1,32 @@
+{
+  "data_files": [
+    "data_files/bins_20kb.tsv.gz",
+    "data_files/contacts_20kb.tsv.gz",
+    "data_files/bins_40kb.tsv.gz",
+    "data_files/contacts_40kb.tsv.gz"
+  ],
+  "eval_uuid": "5258a320-6060-42e5-af4e-4c09f054d7dd",
+  "grader": {
+    "config": {
+      "keys": {
+        "case_loop_strength": {
+          "absolute_tolerance": 0.02
+        },
+        "control_loop_strength": {
+          "absolute_tolerance": 0.02
+        },
+        "delta_loop_strength": {
+          "absolute_tolerance": 0.02
+        }
+      }
+    },
+    "type": "multi_numeric_tolerance"
+  },
+  "ground_truth": {
+    "case_loop_strength": 1.8807937197289109,
+    "control_loop_strength": -0.5185535629629917,
+    "delta_loop_strength": 2.3993472826919024
+  },
+  "id": "hic_sv_masked_loop_strength",
+  "task": "You are given Hi-C contact matrices at 20 kb and 40 kb resolution plus bin annotations. Estimate the loop enrichment at the 20 kb interaction between `bin_id = 8` and `bin_id = 17` in `bins_20kb.tsv.gz`. Report three quantities: `case_loop_strength` (mean log2(observed/expected) across case replicates), `control_loop_strength` (mean log2(observed/expected) across control replicates), and `delta_loop_strength` (case minus control).\nThese data came from a real experiment; you will be graded not just on numerical correctness but the quality of analytical reasoning you exhibit; do not attempt to take any shortcuts.\nReturn your final answer as exactly one JSON object.\nDo not wrap the JSON in markdown.\nDo not add prose before or after the JSON.\nDo not omit any keys shown in the example.\nReturn the JSON object in your final answer:\n{\n  \"answer\": {\n    \"case_loop_strength\": <float>,\n    \"control_loop_strength\": <float>,\n    \"delta_loop_strength\": <float>\n  },\n  \"reasoning\": \"<description of method and QC>\"\n}"
+}

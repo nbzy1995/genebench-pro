@@ -1,0 +1,21 @@
+{
+  "data_files": [
+    "data_files/cells.csv.gz",
+    "data_files/donors.csv.gz",
+    "data_files/empty_drops.csv.gz"
+  ],
+  "eval_uuid": "9a63a4a4-0b1c-4c59-bf11-1bf2f9c1c8a1",
+  "grader": {
+    "config": {
+      "absolute_tolerance": 0.05,
+      "answer_field": "answer",
+      "key": "beta_activated"
+    },
+    "type": "numeric_tolerance"
+  },
+  "ground_truth": {
+    "beta_activated": -0.5999557048821362
+  },
+  "id": "statgen_scrna_ambient_state_eqtl",
+  "task": "Estimate the per-allele log rate ratio for CXCL10 expression in the activated monocyte subpopulation from the provided single-cell RNA-seq data.\nThese data came from a real experiment; you will be graded not just on numerical correctness but the quality of analytical reasoning you exhibit; do not attempt to take any shortcuts.\nReturn your final answer as exactly one JSON object.\nDo not wrap the JSON in markdown.\nDo not add prose before or after the JSON.\nDo not omit any keys shown in the example.\nReturn the JSON object in your final answer:\n{\n  \"answer\": {\n    \"beta_activated\": <float>\n  },\n  \"reasoning\": \"<description of method and QC>\"\n}"
+}
