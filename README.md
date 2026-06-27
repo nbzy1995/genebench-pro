@@ -1,5 +1,5 @@
 ---
-license: cc-by-4.0
+license: mit
 pretty_name: GeneBench-Pro
 language:
 - en
@@ -136,5 +136,4 @@ semantics.
 
 ## License
 
-This public package is available under the Creative Commons Attribution 4.0
-International License (CC BY 4.0). See `LICENSE`.
+This public package is available under the MIT License.
