@@ -549,8 +549,8 @@
         },
         {
           "path": "problems/crispri_casrx_transcript_vs_locus/report_public.pdf",
-          "bytes": 1663617,
-          "sha256": "a0a0e124d546c9cd6667246ed98e4c2fcaeed8df914b6cb90bdc28a205d50e83"
+          "bytes": 1662985,
+          "sha256": "bf98e62844006ddcc6a3099bd210dd75c5a8a1f4d34de9a888c3122635a24a61"
         },
         {
           "path": "problems/crispri_casrx_transcript_vs_locus/data_files/guide_map.tsv.gz",
