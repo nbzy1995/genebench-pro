@@ -145,7 +145,7 @@ at `eb75a3c0996b3cedcc9af685bad02fd166848fa2`. Scientific tasks, data, answers
 and the reference grader are unchanged.
 
 Use Python 3.11+ through uv and an authenticated Codex CLI supporting permission
-profiles and `--ignore-user-config` (development version: `0.165.0`). Provision
+profiles and `--ignore-user-config` (tested: `0.167.0-alpha.4.1`). Provision
 the scientific tools before execution. The integration uses only Python's
 standard library and the included reference grader.
 
