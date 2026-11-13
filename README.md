@@ -1,24 +1,3 @@
----
-license: mit
-pretty_name: GeneBench-Pro
-language:
-- en
-tags:
-- biology
-- genomics
-- benchmark
-- reasoning
-- agents
-- case-study
-- synthetic-data
-- tabular
-configs:
-- config_name: problems
-  data_files:
-  - split: release
-    path: problems.csv
----
-
 # GeneBench-Pro Public Case Studies
 
 This repository contains public GeneBench-Pro case studies. It is the
