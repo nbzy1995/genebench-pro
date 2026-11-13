@@ -134,6 +134,58 @@ graded fields and should not be used as a substitute for `passed`.
 See `reference_definitions.md` for the grader-field definitions and scoring
 semantics.
 
+## Codex Integration
+
+This fork adds Codex CLI execution for original-benchmark parity with the
+[Harbor adapter](https://github.com/harbor-index/adapters/pull/1), following
+[Agent Guide Scenario 2](https://www.harbor-index.org/tutorial/agent-guide#step-4-discuss-parity-plans-and-implement-agents).
+The upstream package is
+[`openai/genebench-pro-public-package`](https://huggingface.co/datasets/openai/genebench-pro-public-package)
+at `eb75a3c0996b3cedcc9af685bad02fd166848fa2`. Scientific tasks, data, answers
+and the reference grader are unchanged.
+
+Use Python 3.11+ through uv and an authenticated Codex CLI supporting permission
+profiles and `--ignore-user-config` (development version: `0.165.0`). Provision
+the scientific tools before execution. The integration uses only Python's
+standard library and the included reference grader.
+
+```bash
+# One case. Supply the agreed model identifier.
+uv run codex_agent.py --model <model-id> --reasoning-effort high \
+  --task-ids wf_selection --output-dir .scratch/run-1
+
+# All cases in manifest release order.
+uv run codex_agent.py --model <model-id> --reasoning-effort high \
+  --output-dir .scratch/run-2
+```
+
+Each case receives a fresh workspace containing only its listed input files.
+The scientific prompt is preserved, with an appended input-file list and an
+instruction to write `eval_answer.json`. Apply this execution instruction
+symmetrically on the Harbor side during parity. Codex user configuration and
+AGENTS.md files are excluded. Default native permissions allow commands to read
+minimal runtime paths and write the case workspace, with command networking
+disabled. Additional scientific installations outside those paths need explicit
+read access through a Codex permission profile.
+
+`--codex-args` accepts replacement native Codex flags and must come last. Use it
+to match the agreed Harbor configuration and execution environment; preserve
+answer isolation when replacing the default permissions. The model connection
+uses Codex's existing authentication. No credentials are written to run results.
+
+The output directory must be new. It contains each case's prompt, JSONL agent
+trace, stderr, workspace, and grader result, plus a run-level `result.json` with
+the Git revision, Codex version, model, settings and public-case pass rate.
+Timeouts, agent failures and invalid submissions are reported separately; a run
+with one of these errors has no aggregate score and exits nonzero. A completed
+grading run exits zero even when a scientific answer fails. `passed` remains the
+authoritative grading decision.
+
+Agree the agent/model, repeat count and budget with the Harbor team before
+parity experiments. Match both sides' environments, agent settings and prompts,
+then follow the guide's paired sanity check and repeated-run sequence. A local
+integration test is not a parity result. Keep local outputs under `.scratch/`.
+
 ## License
 
 This public package is available under the MIT License.
